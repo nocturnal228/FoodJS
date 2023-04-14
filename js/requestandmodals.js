@@ -83,7 +83,6 @@ function bindPostData(form) {
 
         const json = JSON.stringify(Object.fromEntries(formData.entries()));
         postData('http://localhost:3000/requests', json)
-            .then(data => data.text())
             .then(data => {
                 console.log(data);
                 showThanksModal(message.success);
@@ -92,7 +91,7 @@ function bindPostData(form) {
                 showThanksModal(message.failure);
             }).finally(() => {
                 form.reset();
-            })
+            });
     });
 };
 
@@ -123,6 +122,4 @@ function showThanksModal(message) {
 fetch('http://localhost:3000/menu')
     .then(data => data.json())
     .then(result => console.log(result));
-
-
 

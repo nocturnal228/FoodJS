@@ -21,11 +21,8 @@ function showSlideIndex(n) {
         slideIndex = slides.length;
     };
 
-    slides.forEach(item => {
-        item.classList.add('hide');
-        item.classList.remove('show');
-    });
-    slides[slideIndex - 1].classList.add('show');
+    slides.forEach((item) => item.style.display = 'none');
+    slides[slideIndex - 1].style.display = 'block';
 
     if (slides.length < 10) {
         current.textContent = `0${slideIndex}`;
@@ -46,6 +43,5 @@ prevArrow.addEventListener('click', () => {
 nextArrow.addEventListener('click', () => {
     changeSlidesIndex(1);
 });
-
 
 

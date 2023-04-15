@@ -1,6 +1,6 @@
 'use strict';
 
-window.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('DOMContentLoaded', () => {
     import('./foodtabs.js');
     import('./timer.js');
     import('./slider.js');
